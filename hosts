@@ -1,0 +1,1 @@
+bira ansible_host=debian2 ansible_user=bira ansible_private_key_file=~/.ssh/id_rsa
