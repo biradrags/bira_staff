@@ -1,0 +1,6 @@
+- hosts: all
+  become: true
+  roles:
+    - Stouts.iptables
+  tasks:
+    - apt: update_cache=yes

@@ -1,5 +1,15 @@
 ---
+- include: base.yml
+- include: service.yml
+
 - hosts: all
-  become: yes
+  become: true
   roles:
-    - nginx
+    - williamyeh.oracle-java
+    - ragingbal.tomcat
+  vars: 
+    java_version: 8
+    http_port: 8080
+  handlers:
+    - name: restart tomcat
+      service: name=tomcat state=restarted

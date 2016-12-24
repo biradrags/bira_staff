@@ -1,0 +1,19 @@
+---
+- hosts: bira
+  become: yes
+  roles:
+    - singleplatform-eng.users
+  vars:
+    users:
+        - username: bamboo
+          name: bamboo Barrington
+          groups: ['sudo','systemd-journal','bamboo']
+          uid: 1005
+          profile: |
+            alias ll='ls -lah'
+          ssh_key:
+            - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7iwBfPewNyUlZPKSToEq6AXcqgzZQZ4p1m69exUQu1E0GnaJue8WNKsjPNxxmdyhe3myqpYBeH2vITeWT5xdYmrLgeJmYgBX2TN4+jLgj0b1I2vilRePtHKWCaKSPgCRFCBHLBMu+R5TYoR37hO8RUw4xmPNKGkdHT3IlOnBCXVIwgqxm3ekM6n1KVE7sDZZaIFhdcBsslP91dxq7RZHrNRbwm3ISvoSrXYOKzJmOzjV3nwPpathfHBdCBDEeAYfpZ4XrSsydEcdtNtdt5Ww/jMhKTGTtJoGWZQgdyb95KP3wGITCJcp6B7hLYQxPDcI4vhaei0KlZ9b9t0NVy24D bira@debian"
+          groups_to_create:
+            - name: developers
+              gid: 1003
+
