@@ -1,3 +1,0 @@
-[defaults]
-hostfile       = ./environments/dev/inventory
-roles_path    = ./roles
